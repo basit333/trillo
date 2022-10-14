@@ -298,10 +298,36 @@
 
   &__item {
     display: flex;
+    position: relative;
+
+    &-caption {
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+      color: #fff;
+    }
+
+    &:hover &-caption {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
   }
 
   &__photo {
     width: 100%;
+    transition: all .5s ease-out;
+
+    &:hover {
+      cursor: pointer;
+      filter: blur(2px) brightness(50%);
+    }
   }
 }
 
